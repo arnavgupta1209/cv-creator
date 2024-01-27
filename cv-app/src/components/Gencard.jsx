@@ -3,14 +3,17 @@ export default function Gencard({updateinfo})  {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
-        updateinfo(name);
+        const email = form.email.value;
+        const phone = form.phone.value;
+        const address = form.address.value;
+        form.reset();
+        updateinfo(name, email, phone, address);
     }
 
     const handleEdit = (e) => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
-        updateinfo(name);
+        
     }
 
 

@@ -1,18 +1,44 @@
 
-export default function Pracard()  {
+
+export default function Pracard({updateinfo})  {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const company = form.company.value;
+        const date = form.date.value;
+        const title = form.title.value;
+        const desc = form.desc.value;
+        form.reset()
+        updateinfo(company, title, date, desc);
+    }
+
+    const handleEdit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        
+    }
+
+
+
+
+
+
+
+
+
     return (<div className="card">
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="company">Company</label>
             <input type="text" id="company" />
-            <label htmlFor="dates">Start and end dates</label>
-            <input type="text" id="dates" />
-            <label htmlFor="title">Title</label>
+            <label htmlFor="date">Start and end dates</label>
+            <input type="text" id="date" />
+            <label htmlFor="title">title</label>
             <input type="text" id="title" />
-            <label htmlFor="description">Description</label>
-            <input type="text" id="description" />
+            <label htmlFor="desc">description</label>
+            <input type="text" id="desc" />
             <div className="butdiv">
-            <button type="button" id="prasubmit">Submit</button>
-            <button type="button" id="praedit">Edit</button>
+            <button type="submit">Submit</button>
+            <button type="button" onClick={handleEdit}>Edit</button>
             </div>
         </form>
     </div>);

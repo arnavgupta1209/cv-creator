@@ -4,15 +4,15 @@ import Gencard from "./Gencard";
 
 export default function Left(props) {
 
-  infor = props.getinfo;
+  const infor = props.getinfo;
   const changeperinfo = (name, email, phone, address) => {
     props.updateinfo({...infor, personalInfo: {fullName: name, email: email, phone: phone, address: address}});
   };
-  const changeeduinfo = (school, degree, startDate, endDate, location) => {
-    props.updateinfo({...infor, educationInfo: {school: school, degree: degree, startDate: startDate, endDate: endDate, location: location}});
+  const changeeduinfo = (school, degree, date, grade) => {
+    props.updateinfo({...infor, educationInfo: {school: school, degree: degree, date: date, grade: grade}});
   };
-  const changeexpinfo = (companyName, positionTitle, startDate, endDate, location, description) => {
-    props.updateinfo({...infor, experienceInfo: {companyName: companyName, positionTitle: positionTitle, startDate: startDate, endDate: endDate, location: location, description: description}});
+  const changeexpinfo = (companyName, positionTitle, date, description) => {
+    props.updateinfo({...infor, experienceInfo: {companyName: companyName, positionTitle: positionTitle, date: date, description: description}});
   };
 
 
